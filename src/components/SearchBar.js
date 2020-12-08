@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const SearchWrapper = styled.div`
@@ -47,15 +47,7 @@ const SearchButton = styled.button`
 
 export default function SearchBar({ onSearch }) {
 
-  const [searchQuery, setSearchQuery] = useState("Accra")
-  const lastSearch = useRef(searchQuery);
-
-  const handleSearch = (data) => {
-    // if(lastSearch.current !== searchQuery) {
-      onSearch(searchQuery);
-      // lastSearch.current = searchQuery;
-    // }
-  }
+  const [searchQuery, setSearchQuery] = useState("")
 
   return (
     <>
@@ -65,8 +57,8 @@ export default function SearchBar({ onSearch }) {
           placeholder="Search a location" 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)} 
-          onKeyUp={(e) => { return e.code === "Enter" ? handleSearch() :  "" }} />
-        <SearchButton onClick={() => { handleSearch() }}><i className='bx bx-search-alt'></i></SearchButton>
+          onKeyUp={(e) => { return e.code === "Enter" ? onSearch(searchQuery) :  "" }} />
+        <SearchButton onClick={() => { onSearch(searchQuery) }}><i className='bx bx-search-alt'></i></SearchButton>
       </SearchWrapper>
     </>
   )
