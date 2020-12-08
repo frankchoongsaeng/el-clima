@@ -85,17 +85,8 @@ const Footer = styled.div`
 `;
 
 const callApi = (query) => {
-  return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${query}&appid=9113b13f98a13c2b00f8a5bd81dbacc0&units=metric`)
+  return axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=9113b13f98a13c2b00f8a5bd81dbacc0&units=metric`)
 }
-
-// const callApi = (query, callback = () => { }) => {
-//   return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${query}&appid=9113b13f98a13c2b00f8a5bd81dbacc0&units=metric`)
-//     .then(res => {
-//       callback(res, false);
-//     }).catch
-
-// }
-
 
 
 export default function Home(props) {
