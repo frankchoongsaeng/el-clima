@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import fadeIn from "react-animations/lib/fade-in";
 
 
 const CardWrapper = styled.div`
@@ -14,6 +15,8 @@ const CardWrapper = styled.div`
   flex-direction: column;
   align-items: stretch;
   position: relative;
+  transition: all 0.2s linear;
+  animation: .6s ${keyframes`${fadeIn}`};
   :not(:first-child) {
     margin-left: 5px;
   }
@@ -49,16 +52,15 @@ export default function Card(props) {
   return (
     <>
       <CardWrapper>
-        <div className="card-body">
+        <div className="card-body" >
           <p className="location"> {`${props.data.name}, ${props.data.sys.country}`} </p>
           <img src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`} alt="weather icon" onError={() => alert("error loading image")} />
           <p className="temperature">{props.data.main.temp}&deg;</p>
           <p className="weather-info">{props.data.weather[0].description}</p>
         </div>
         <div className="card-footer">
-          Checked at {Intl.DateTimeFormat("en", {hour12: true, hour: "numeric", minute: "numeric"}).format(new Date(props.data.dt * 1000))}
+          Checked at {Intl.DateTimeFormat("en", { hour12: true, hour: "numeric", minute: "numeric" }).format(new Date(props.data.dt * 1000))}
         </div>
-
       </CardWrapper>
     </>
   )

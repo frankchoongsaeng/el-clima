@@ -1,11 +1,13 @@
-import styled  from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import LargeText from './LargeText';
 import Card from './Card';
+import slideInUp from 'react-animations/lib/slide-in-up';
 
 const Parent = styled.div`
   margin-top: 3rem;
   width: 100%;
   max-width: 960px;
+  animation: 0.6s ${keyframes`${slideInUp}`};
 `;
 
 const CardContainer = styled.div`
@@ -29,9 +31,7 @@ export default function History(props) {
                   tempHistoryList.push(<Card key={i} data={props.historylist[i]} />)
                 }
 
-                // return props.historylist.map((weatherdata, i) => return i < 7 ? <Card data={weatherdata} />)
                 return tempHistoryList;
-
             }
             else
               return <p style={{color: "white"}}>No search history to display</p>

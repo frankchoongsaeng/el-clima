@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import { useEffect, useRef, useState } from 'react';
+import { fadeIn } from 'react-animations';
+import styled, { keyframes } from 'styled-components';
 import LargeText from '../components/LargeText';
 import SearchBar from '../components/SearchBar';
 import History from '../components/History';
-import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
 
@@ -11,6 +12,14 @@ const HomeLayout = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
+`;
+
+const Animate = styled.div`
+  width 100%;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  animation: 1s ${keyframes`${fadeIn}`};
 `;
 
 const MainWeatherInfoContainer = styled.div`
@@ -148,6 +157,7 @@ export default function Home(props) {
   return (
     <>
       <HomeLayout>
+        <Animate>
         <SearchBar onSearch={onSearch} isRequesting={isRequesting} defaultVal="Accra" />
         <LargeText>{dataLoaded ? weatherdata.name + ", " + weatherdata.sys.country : "Loading..."}</LargeText>
         <MainWeatherInfoContainer>
@@ -173,6 +183,7 @@ export default function Home(props) {
             <WeatherDescriptionText>{dataLoaded ? weatherdata.visibility / 1000 : "-"} km</WeatherDescriptionText>
           </WeatherDescription>
         </WeatherDescriptionWrapper>
+        </Animate>
         <History historylist={history} />
         <Footer>
           Made with <i className='bx bxs-heart'></i> - <span>Frank Choongsaeng</span>

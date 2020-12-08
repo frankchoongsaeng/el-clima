@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import fadeIn from 'react-animations/lib/fade-in';
+import fadeInUp from 'react-animations/lib/fade-in-up';
+import fadeInUpBig from 'react-animations/lib/fade-in-up-big';
+import styled, { keyframes } from 'styled-components';
 
 const SearchWrapper = styled.div`
   border: 1px solid white;
@@ -11,6 +14,7 @@ const SearchWrapper = styled.div`
   padding: 0;
   max-width: 750px;
   width: 100%;
+  animation: 1s ${keyframes`${fadeIn}`}
 `;
 
 const Input = styled.input`
