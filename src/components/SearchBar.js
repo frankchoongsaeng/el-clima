@@ -45,9 +45,9 @@ const SearchButton = styled.button`
 `;
 
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ onSearch, defaultVal }) {
 
-  const [searchQuery, setSearchQuery] = useState("Accra")
+  const [searchQuery, setSearchQuery] = useState(defaultVal)
 
   return (
     <>

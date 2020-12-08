@@ -148,7 +148,7 @@ export default function Home(props) {
   return (
     <>
       <HomeLayout>
-        <SearchBar onSearch={onSearch} isRequesting={isRequesting} />
+        <SearchBar onSearch={onSearch} isRequesting={isRequesting} defaultVal="Accra" />
         <LargeText>{dataLoaded ? weatherdata.name + ", " + weatherdata.sys.country : "Loading..."}</LargeText>
         <MainWeatherInfoContainer>
           <WeatherIcon src={dataLoaded ? `http://openweathermap.org/img/wn/${weatherdata.weather[0].icon}@2x.png` : "-"} alt="weather icon" />
