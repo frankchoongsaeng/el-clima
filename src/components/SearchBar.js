@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import fadeIn from 'react-animations/lib/fade-in';
-import fadeInUp from 'react-animations/lib/fade-in-up';
-import fadeInUpBig from 'react-animations/lib/fade-in-up-big';
 import styled, { keyframes } from 'styled-components';
 
 const SearchWrapper = styled.div`
