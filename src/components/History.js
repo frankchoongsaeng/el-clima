@@ -8,10 +8,13 @@ const Parent = styled.div`
   width: 100%;
   max-width: 960px;
   animation: 0.6s ${keyframes`${slideInUp}`};
-`;
-
-const CardContainer = styled.div`
-  display: flex;
+  `;
+  
+  const CardContainer = styled.div`
+  padding-bottom: 0.5rem;
+  overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
 `;
 
 export default function History(props) {

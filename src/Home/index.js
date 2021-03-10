@@ -11,11 +11,11 @@ const HomeLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
+  padding: 3rem 1rem 4rem 1rem;
 `;
 
 const Animate = styled.div`
-  width 100%;
+  width: 100%;
   display: flex; 
   flex-direction: column;
   align-items: center;
@@ -60,6 +60,7 @@ const SmallText = styled.p`
 
 const WeatherDescriptionWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 10px;
   letter-spacing: 0.8px;
@@ -68,6 +69,7 @@ const WeatherDescriptionWrapper = styled.div`
 const WeatherDescription = styled.div`
   display: flex;
   margin: 0 10px;
+  margin-bottom: 0.5em;
 `;
 
 const WeatherDescriptionText = styled.p`
@@ -83,7 +85,7 @@ const Footer = styled.div`
   padding: 10px 20px;
   color: white;
   background-color: black;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   font-size: 80%;
   i {

@@ -4,14 +4,13 @@ import fadeIn from "react-animations/lib/fade-in";
 
 const CardWrapper = styled.div`
   font-size: 80%;
-  max-width: 132px;
+  width: 132px;
   min-height: 180px;
-  width: 100%;
   color: white;
   border: 1px solid white;
   border-radius: 0;
   padding: 0;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: stretch;
   position: relative;
