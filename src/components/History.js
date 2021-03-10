@@ -13,7 +13,7 @@ const Parent = styled.div`
   const CardContainer = styled.div`
   padding-bottom: 0.5rem;
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: nowrap;
 `;
 
